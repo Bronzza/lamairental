@@ -184,10 +184,6 @@ $headerHeight: 40;
 		font-size: 24px;
 		padding-left: 5px;
 		}
-
-		// ion-icon:hover {
-		// 	color: white;
-		// }
 	}
 
 	.nav__logo {
@@ -266,10 +262,6 @@ $headerHeight: 40;
 		padding-right: 10px;
 	}
 
-	// .main__image {
-	// 	align-items: end;
-	// 	padding-bottom: 5px;
-	// }
 }
 
 @media only screen and (max-width: 600px) and (min-width: 501px) {
@@ -281,9 +273,6 @@ $headerHeight: 40;
 			padding-left: 3px;
 		}
 	}
-	// .main__image {
-	// 	align-items: center;
-	// }
 }
 
 @media only screen and (max-width: 501px) and (min-width: 421px) {
@@ -292,9 +281,6 @@ $headerHeight: 40;
 			display: none;
 		}
 	}
-	// .main__image {
-	// 	align-items: center;
-	// }
 }
 
 @media only screen and (max-width: 601px) and (min-width: 421px) {
@@ -323,15 +309,17 @@ $headerHeight: 40;
 		text-align: center;
 	}
 
-	// .main__image {
-	// 	align-items: center;
-	// }
-}
+	.main__image {
+		align-items: center;
+	}
+}	
 
 @media only screen and (max-width: 450px) {
 		.main__image {
 		align-items: end;
-		padding-bottom: 10px;
+		img {
+			margin-bottom: 50px;
+		}
 	}
 }
 
@@ -349,11 +337,6 @@ $headerHeight: 40;
 		padding-right: 0px;
 		@include adaptive-value(padding-left, 200, 10, 2);
 	}
-
-	// .main__image {
-	// 	display: flex;
-	// 	align-items: end;
-	// }
 }
 
 
@@ -362,10 +345,6 @@ $headerHeight: 40;
 		justify-content: center;
 		@include adaptive-value(padding-left, 100, 10, 2);
 	}
-
-	// .main__image {
-	// 	align-items: center;
-	// }
 }
 
 //Main section
@@ -382,11 +361,25 @@ $headerHeight: 40;
 	display: flex;
 }
 
+.main__column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+}
+
 .main__title {
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-	margin: 0px 0px 38px 0px;
+	// margin: 0px 0px 38px 0px;
 	@include adaptive-value(margin-bottom, 38, 20, 0);
+	@include adaptive-value(margin-left, 58, 30, 0);
 	@include adaptive-value(font-size, 50, 30, 0);
+	color: #b2b2b9;
+}
+
+.main__list_wrapper {
+	flex: 1 1 auto;
 }
 
 
@@ -426,36 +419,97 @@ $headerHeight: 40;
 	flex-direction: column;
 	@include adaptive-value(padding-right, 20, 12, 0);
 	@include adaptive-value(padding-left, 20, 12, 0);
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
-.buttons {
-	display: flex;
-	text-align: bottom;
-	justify-self: end;
-	justify-content: start;
+
+.main__buttons {
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.buttons__link {
+  @include adaptive-value(width, 220, 90, 1);
+  @include adaptive-value(height, 50, 30, 1);
+  display: flex;
+
+  border-radius: 10px;
+
+  transition: all 0.8s ease 0s;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; 
+  margin: 10px; 
+  @include adaptive-value(margin-left, 30, 10, 1);
+}
+
+.buttons__link:hover .buttons__waves{
+  top: -50px;
+}
+
+.buttons__link:hover {
+  border-radius: 10px;
+  transition: all 0.8s ease 0.2s;
+  box-shadow: insert 0 0 40px rgba(242, 5, 72, 0.6);
+}
+
+.buttons__text {
+  color: #d2d2d4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.buttons__waves {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-color: #f20548;
+  box-shadow: inset 0 0 50px rgba(85, 96, 112, 0.5);
+  top: 0;
+  left: 0;
+  transition: all 0.8s ease 0s;
 
 }
 
-.buttons__call_us,
-.buttons__gallery {
-	display: inline-block;
-	@include adaptive-value(width, 120, 90, 0);
-	@include adaptive-value(height, 40, 30, 0);
-	@include adaptive-value(line-height, 40, 30, 0);
-	border-radius: 15px;
-	padding: 0px 5px;
-	@include adaptive-value(padding-left, 15, 5, 0);
-	@include adaptive-value(padding-right, 15, 5, 0);
-	background-color:#f20548;
-	box-shadow: 0 6px 20px teal;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	@include adaptive-value(font-size, 10, 8, 0);
-	margin: 0px 10px;
-	color: black;
+.buttons__waves:after,
+.buttons__waves:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 250%;
+  height: 250%;
+  transform: translate3d(-50%,-96%,0) rotate(0deg) scale(1);
 }
+
+.buttons__waves:before {
+  background-color: #353637;
+  border-radius: 48%;
+  animation: waves 5s infinite linear;
+}
+
+.buttons__waves:after {
+  background-color: rgba(53, 54, 55,0.5);
+  border-radius: 42%;
+  animation: waves 10s infinite linear;
+}
+
+@keyframes waves {
+  0% {
+    transform: translate3d(-50%,-98%,0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-50%,-98%,0) rotate(360deg) scale(1);
+  }
+}
+
 
 .main__image {
 	display: flex;
