@@ -157,7 +157,6 @@ $headerHeight: 40;
 	&__logo {
 		@include adaptive-value(padding-right, 70, 0, 0);
 		display: flex;
-		flex-basis: 40%;
 		justify-content: center;
 		flex:0 0 40%;
 		align-items: center;
@@ -227,6 +226,7 @@ $headerHeight: 40;
 	.header__logo {
 		justify-content: center;
 		padding-left: 20px;
+		flex-basis: 30%;
 	}
 
 	.item__model_year {
@@ -318,7 +318,7 @@ $headerHeight: 40;
 		.main__image {
 		align-items: end;
 		img {
-			margin-bottom: 50px;
+			margin-bottom: 30px;
 		}
 	}
 }
@@ -347,6 +347,22 @@ $headerHeight: 40;
 	}
 }
 
+.title__border {
+	@include adaptive-value(width, 160, 120, 0);
+	@include adaptive-value(height, 5, 3, 0);
+	background-color: #6ab04c;
+	margin: 0 auto;
+	@include adaptive-value(margin-top, 15, 8, 0);
+	@include adaptive-value(margin-bottom, 20, 8, 0);
+}
+
+.about_border {
+	@include adaptive-value(margin-top, 5, 5, 0);
+	@include adaptive-value(margin-bottom, 5, 5, 0);
+	// @include adaptive-value(margin-left, 40, 20, 0);
+	@include adaptive-value(width, 300, 120, 0);
+}
+
 //Main section
 
 .main {
@@ -359,21 +375,22 @@ $headerHeight: 40;
 
 .main__row {
 	display: flex;
+	justify-content: space-between;
 }
 
 .main__column {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+
 	justify-content: center;
 
 }
 
 .main__title {
 	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-	// margin: 0px 0px 38px 0px;
-	@include adaptive-value(margin-bottom, 38, 20, 0);
-	@include adaptive-value(margin-left, 58, 30, 0);
+	margin: 10px 0px 20px 0px;
+	// @include adaptive-value(margin-bottom, 12, 20, 1);
+	@include adaptive-value(margin-left, 78, 30, 0);
 	@include adaptive-value(font-size, 50, 30, 0);
 	color: #b2b2b9;
 }
@@ -419,7 +436,7 @@ $headerHeight: 40;
 	flex-direction: column;
 	@include adaptive-value(padding-right, 20, 12, 0);
 	@include adaptive-value(padding-left, 20, 12, 0);
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 
@@ -527,7 +544,11 @@ $headerHeight: 40;
 }
 
 .about__title {
-	@include adaptive-value(margin-bottom, 33, 15, 0);
+	@include adaptive-value(margin-bottom, 10, 10, 0);
+}
+
+.about__title_wrapper {
+	@include adaptive-value(margin-bottom, 28, 10, 0);
 }
 
 .about__image {
@@ -716,10 +737,6 @@ p:last-child {
 	width: 16px;
 }
 
-.scroll__right,
-.scroll__left {
-	display: none;
-}
 
 .testimonials__graphics {
 	margin-top: 3px;
@@ -757,30 +774,6 @@ p:last-child {
 }
 
 @media only screen and  (max-width: 700px) {
-	.scroll__left, .scroll__right {
-		display: block;
-		cursor: pointer;
-	}
-
-	.scroll__left {
-		margin-left: 5px;
-	}
-
-	.scroll__right {
-		margin: 0 5px 0 7px;
-	}
-
-	.scroll {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.scroll__icon {
-			fill: grey;
-			width: 32px;
-		}
-
 	.testimonials__column {
 		flex: none;
 		width: 50%;
@@ -793,6 +786,10 @@ p:last-child {
 	.testimonials__row::-webkit-scrollbar {
 		display: none;
 	}
+}
+
+.testimonials__title_border {
+	@include adaptive-value(margin-bottom, 25, 12, 0);
 }
 
 // @media only screen and  (min-width: 700px) {
