@@ -196,7 +196,7 @@ body {
   gap: calc(0px + 20 * (100vw - 320px) / 860);
 }
 .header__logo img {
-  margin-top: calc(15px + 5 * (100vw - 320px) / 860);
+  margin-top: calc(10px + 5 * (100vw - 320px) / 860);
 }
 .header__phone {
   text-align: center;
@@ -210,17 +210,26 @@ body {
   display: inline-block;
   text-align: center;
 }
-.header__phone ion-icon {
+.header__phone a .header__phone_icon {
   position: relative;
   top: 5px;
   left: 5px;
   color: #b2b2b9;
   font-size: 24px;
+  width: 24px;
   padding-left: 5px;
+  fill: #b2b2b9;
 }
 .header .nav__logo {
   -o-object-fit: none;
      object-fit: none;
+}
+
+.header__phone_link:hover {
+  background-color: #47515e;
+}
+.header__phone_link:hover .header__phone_icon {
+  fill: white;
 }
 
 @media only screen and (max-width: 320px) {
@@ -290,15 +299,13 @@ body {
   }
 }
 @media only screen and (max-width: 600px) and (min-width: 501px) {
-  .header__phone ion-icon {
-    top: 3px;
-    left: 3px;
+  .header__phone .header__phone_icon {
     font-size: 16px;
     padding-left: 3px;
   }
 }
 @media only screen and (max-width: 501px) and (min-width: 421px) {
-  .header__phone ion-icon {
+  .header__phone .header__phone_icon {
     display: none;
   }
 }
@@ -997,33 +1004,26 @@ p:last-child {
   margin: 15px 0px;
 }
 
-ion-icon {
-  font-size: 32px;
-  color: #f20548;
-}
-
-.line_icon {
+.info_icon {
   fill: #f20548;
   width: 32px;
+  color: #f20548;
 }
 
 .info__phone:hover,
 .info__whatsup:hover,
 .info__line:hover,
-.info__google_map:hover {
+.info__google_map:hover,
+.info__link:hover {
   background-color: #47515e;
 }
-.info__phone:hover ion-icon,
-.info__whatsup:hover ion-icon,
-.info__line:hover ion-icon,
-.info__google_map:hover ion-icon {
-  color: orange;
-}
-.info__phone:hover .line_icon,
-.info__whatsup:hover .line_icon,
-.info__line:hover .line_icon,
-.info__google_map:hover .line_icon {
+.info__phone:hover .info_icon,
+.info__whatsup:hover .info_icon,
+.info__line:hover .info_icon,
+.info__google_map:hover .info_icon,
+.info__link:hover .info_icon {
   fill: orange;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
+  color: orange;
 }
