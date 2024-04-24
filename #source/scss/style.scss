@@ -130,26 +130,28 @@ $headerHeight: 40;
 	}
 
 	&__menu  {
-		flex-basis: 60%;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		a {
-			color: #b2b2b9;
-			white-space: nowrap;
-			display: inline-block;
-			@include adaptive-value(padding-left, 15, 7, 0);
-			@include adaptive-value(padding-right, 15, 7, 0);
-			text-decoration: none;
-		}
-
-		a:hover{
-			background-color: #47515e;
-		}
-
-		&:last-child {
-			@include adaptive-value(margin-right, 210, 50, 0);
-			white-space: nowrap;
+		ul {
+			flex-basis: 60%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			a {
+				color: #b2b2b9;
+				white-space: nowrap;
+				display: inline-block;
+				@include adaptive-value(padding-left, 15, 7, 0);
+				@include adaptive-value(padding-right, 15, 7, 0);
+				text-decoration: none;
+			}
+	
+			a:hover{
+				background-color: #47515e;
+			}
+	
+			&:last-child {
+				@include adaptive-value(margin-right, 210, 50, 0);
+				white-space: nowrap;
+			}
 		}
 	}
 
@@ -161,6 +163,9 @@ $headerHeight: 40;
 		flex:0 0 40%;
 		align-items: center;
 		@include adaptive-value(gap, 20, 0, 0);
+		img {
+			@include adaptive-value(margin-top, 20, 15, 0);
+		}
 	}
 
 	&__phone {
@@ -212,10 +217,6 @@ $headerHeight: 40;
 		@include adaptive-value(padding-left, 38, 10, 0);
 		text-align: justify;
 	}
-
-		.about__title {
-		text-align: center;
-	}
 }
 
 @media only screen and (max-width: 420px) and (min-width: 321px){
@@ -251,12 +252,6 @@ $headerHeight: 40;
 
 	}
 
-	.about__title {
-		text-align: center;
-	}
-
-
-
 	.testimonials__column {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -288,7 +283,7 @@ $headerHeight: 40;
 		justify-content: flex-end;
 	}
 
-	.header__menu {
+	.header__list {
 		justify-content: flex-start;
 	}
 
@@ -303,10 +298,6 @@ $headerHeight: 40;
 		padding-bottom: 0px;
 		@include adaptive-value(padding-left, 38, 10, 0);
 		text-align: justify;
-	}
-
-	.about__title {
-		text-align: center;
 	}
 
 	.main__image {
@@ -545,6 +536,7 @@ $headerHeight: 40;
 
 .about__title {
 	@include adaptive-value(margin-bottom, 10, 10, 0);
+	text-align: center;
 }
 
 .about__title_wrapper {
