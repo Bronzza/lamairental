@@ -360,8 +360,13 @@ $headerHeight: 40;
 .about_border {
 	@include adaptive-value(margin-top, 5, 5, 0);
 	@include adaptive-value(margin-bottom, 5, 5, 0);
-	// @include adaptive-value(margin-left, 40, 20, 0);
 	@include adaptive-value(width, 300, 120, 0);
+}
+
+#svg_header {
+	@include adaptive-value(margin-top, 25, 10, 0);
+	@include adaptive-value(height, 80, 35, 0);
+	@include adaptive-value(width, 80, 35, 0);
 }
 
 //Main section
@@ -656,7 +661,6 @@ p:last-child {
 }
 
 .item__price p:first-child {
-	// padding-top: 10px;
 	@include adaptive-value(padding-top, 7, 3, 0);
 }
 
@@ -702,10 +706,6 @@ p:last-child {
 
 .testimonials__item {
 	background-color:  #445162;
-	// #445162
-	// #4b5e75
-	//#627082
-	//#354e6e
 	color: #fff;
 	border-radius: 5px;
 	border: 1px solid #445162;
@@ -762,7 +762,6 @@ p:last-child {
 	text-align: center;
 	color: #445162;
 	padding: 10px 0;
-	// font-size: 20px;
 	@include adaptive-value(font-size, 20, 16, 0);
 	@include adaptive-value(height, 60, 50, 0);
 	flex: 0 0 auto;

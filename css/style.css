@@ -401,6 +401,12 @@ body {
   width: calc(120px + 180 * (100vw - 320px) / 860);
 }
 
+#svg_header {
+  margin-top: calc(10px + 15 * (100vw - 320px) / 860);
+  height: calc(35px + 45 * (100vw - 320px) / 860);
+  width: calc(35px + 45 * (100vw - 320px) / 860);
+}
+
 .main {
   background-color: #353637;
   padding-top: calc(30px + 20 * (100vw - 320px) / 860);
