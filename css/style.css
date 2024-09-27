@@ -724,6 +724,10 @@ p:last-child {
   padding: 0px 8px;
 }
 
+.hidden_block {
+  display: none;
+}
+
 .item__row {
   display: -webkit-box;
   display: -ms-flexbox;
